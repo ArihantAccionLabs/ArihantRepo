@@ -6,4 +6,4 @@ phases:
       - mvn package
 artifacts:
   files:
-    - /target/BootAWSApp.jar
+    - '/target/BootAWSApp.jar'
