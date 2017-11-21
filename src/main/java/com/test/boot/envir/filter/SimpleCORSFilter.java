@@ -30,7 +30,12 @@ public class SimpleCORSFilter  implements Filter{
 	    
 	    System.out.println("*************   doFilter() ******************** : request.getHeader(\"Origin\") :: "+request.getHeader("Origin"));
 
-	    response.setHeader("Access-Control-Allow-Origin", "*");
+	    if(request.getHeader("Origin")==null) {
+	    	request.getHeader("http://awsbootpoc-env.us-east-1.elasticbeanstalk.com");
+	    }else {
+	    	
+	    	response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
+	    }
 	    response.setHeader("Access-Control-Allow-Credentials", "true");
 	    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
 	    response.setHeader("Access-Control-Max-Age", "3600");
