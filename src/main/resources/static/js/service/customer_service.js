@@ -2,7 +2,7 @@
  
 App.factory('CustomerService', ['$http', '$q', function($http, $q){
  
-    var REST_SERVICE_URI = 'http://bootawspoc.us-east-2.elasticbeanstalk.com/sample/customer/';
+    var REST_SERVICE_URI = 'http://awsbootpocqa-env.us-east-1.elasticbeanstalk.com/sample/customer';
  
     var factory = {
         fetchAllCustomers: fetchAllCustomers,
